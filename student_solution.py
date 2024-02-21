@@ -4,6 +4,11 @@ def hexToDecimal(hexString):
     :param hexString: str, hexadecimal string
     :return: int, decimal equivalent
     """
+    decimal = 0
+    for i in range(len(hexString)):
+        decimal += int(hexString[i], 16) * (16 ** (len(hexString) - 1 - i))
+    return decimal
+    # Alternative solution using built-in function "int()"
     return int(hexString, 16)
 
 def decimalToBinary(decimalValue):
@@ -12,6 +17,13 @@ def decimalToBinary(decimalValue):
     :param decimalValue: int, decimal number
     :return: str, binary string representation
     """
+    binary = ""
+    while decimalValue > 0:
+        binary = str(decimalValue % 2) + binary
+        decimalValue //= 2
+
+    return binary
+    # Alternative solution using built-in function "bin()"
     return bin(decimalValue)[2:]  # bin() returns binary string prefixed with '0b', so slice it off.
 
 # Example usage (not necessary for the assignment, just for student testing)
