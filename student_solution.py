@@ -10,6 +10,7 @@ def hexToDecimal(hexString):
     return decimal
     # Alternative solution using built-in function "int()"
     return int(hexString, 16)
+    
 
 def decimalToBinary(decimalValue):
     """
